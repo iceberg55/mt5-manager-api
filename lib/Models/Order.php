@@ -59,7 +59,10 @@ class Order implements ModelInterface, ArrayAccess
         'symbol' => 'string',
         'type' => 'int',
         'type_str' => 'string',
-        'profit' => 'float'
+        'profit' => 'float',
+        'close_price' => 'float',
+        'open_price' => 'float',
+        'ticket' => 'int',
     ];
 
     /**
@@ -71,7 +74,10 @@ class Order implements ModelInterface, ArrayAccess
         'symbol' => null,
         'type' => null,
         'type_str' => null,
-        'profit' => null
+        'profit' => null,
+        'close_price' => null,
+        'open_price' => null,
+        'ticket' => null,
     ];
 
     /**
@@ -104,7 +110,10 @@ class Order implements ModelInterface, ArrayAccess
         'symbol' => 'symbol',
         'type' => 'type',
         'type_str' => 'type_str',
-        'profit' => 'profit'
+        'profit' => 'profit',
+        'close_price' => 'close_price',
+        'open_price' => 'open_price',
+        'ticket' => 'ticket',
     ];
 
     /**
@@ -116,7 +125,10 @@ class Order implements ModelInterface, ArrayAccess
         'symbol' => 'setSymbol',
         'type' => 'setType',
         'type_str' => 'setTypeStr',
-        'profit' => 'setProfit'
+        'profit' => 'setProfit',
+        'close_price' => 'setClosePrice',
+        'open_price' => 'setOpenPrice',
+        'ticket' => 'setTicket',
     ];
 
     /**
@@ -128,7 +140,10 @@ class Order implements ModelInterface, ArrayAccess
         'symbol' => 'getSymbol',
         'type' => 'getType',
         'type_str' => 'getTypeStr',
-        'profit' => 'getProfit'
+        'profit' => 'getProfit',
+        'close_price' => 'getClosePrice',
+        'open_price' => 'getOpenPrice',
+        'ticket' => 'getTicket',
     ];
 
     /**
@@ -193,6 +208,9 @@ class Order implements ModelInterface, ArrayAccess
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['type_str'] = isset($data['type_str']) ? $data['type_str'] : null;
         $this->container['profit'] = isset($data['profit']) ? $data['profit'] : null;
+        $this->container['close_price'] = isset($data['close_price']) ? $data['close_price'] : null;
+        $this->container['open_price'] = isset($data['open_price']) ? $data['open_price'] : null;
+        $this->container['ticket'] = isset($data['ticket']) ? $data['ticket'] : null;
     }
 
     /**
@@ -314,6 +332,80 @@ class Order implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets close_price
+     *
+     * @return float
+     */
+    public function getClosePrice()
+    {
+        return $this->container['close_price'];
+    }
+
+    /**
+     * Sets close_price
+     *
+     * @param float $close_price close_price
+     *
+     * @return $this
+     */
+    public function setClosePrice($close_price)
+    {
+        $this->container['close_price'] = $close_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets open_price
+     *
+     * @return float
+     */
+    public function getOpenPrice()
+    {
+        return $this->container['open_price'];
+    }
+
+    /**
+     * Sets open_price
+     *
+     * @param float $open_price open_price
+     *
+     * @return $this
+     */
+    public function setOpenPrice($open_price)
+    {
+        $this->container['open_price'] = $open_price;
+
+        return $this;
+    }
+
+
+    /**
+     * Gets ticket
+     *
+     * @return float
+     */
+    public function getTicket()
+    {
+        return $this->container['ticket'];
+    }
+
+    /**
+     * Sets ticket
+     *
+     * @param float $ticket ticket
+     *
+     * @return $this
+     */
+    public function setTicket($ticket)
+    {
+        $this->container['ticket'] = $ticket;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
